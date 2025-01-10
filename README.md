@@ -1,3 +1,6 @@
+GUDINA ASEFA
+UGR/8011/13
+
 # Pokedex API
 
 ## Overview

@@ -42,6 +42,15 @@ namespace pokedex.Services
             await _pokemonCollection.InsertOneAsync(newPokemon);
             return newPokemon;
         }
+        // Method to delete a Pokémon by its ID
+
+        public async Task<bool> DeletePokemon(string id)
+        {
+            var result = await _pokemonCollection.DeleteOneAsync(p => p.Id == id);
+            if (result.DeletedCount == 0)
+                throw new Exception("Pokemon not found");
+            return true;
+        }
          // Method to update an existing Pokémon by its ID
 
         public async Task<Pokemon> UpdatePokemon(string id, Pokemon updatedPokemon)
